@@ -1,0 +1,82 @@
+<h3 class="text-light mt-3 mb-5 mx-3">PRODUCTS</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <h3 class="text-light text-center mt-2">NEW PRODUCT</h3>
+            <form name="myForm">
+                <div class="mb-3 mt-3">
+                    <label for="product_name" class="form-label">Product name:</label>
+                    <span class="text-danger" ng-show="myForm.product_name.$dirty && myForm.product_name.$invalid">Enter product name:</span>
+                    <input type="text" class="form-control"  placeholder="Enter product name" name="product_name" id="product_name" ng-model="product_name">
+                  </div>
+                  <div class="mb-3 mt-3">
+                    <label for="price" class="form-label">Price:</label>
+                    <span class="text-danger" ng-show="myForm.price.$dirty && myForm.price.$invalid">Enter price</span>
+                    <input type="text" class="form-control"  placeholder="Enter price" name="price" id="price" ng-model="price">
+                  </div>
+                  <div class="mb-3 mt-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <span class="text-danger" ng-show="myForm.title.$dirty && myForm.title.$invalid">Enter category</span>
+                    <select name="title" id="title" ng-model="title" class="form-control">
+                        <option ng-repeat="product in products" value="{{product.title}}">{{product.title}}</option>
+                    </select>
+                </div>
+                  <button type="button" class="btn btn-success" ng-click="function_products(product_name,price,title)">Save</button>
+            </form>
+            <div class="alert alert-success mt-4" ng-show="alert_success">Successful!</div>
+            <div class="alert alert-danger mt-4" ng-show="alert_danger">Unsuccessful!</div>
+        </div>
+        <!-- /left content -->
+        <div class="col-sm-9">
+            <h3 class="text-light text-center mt-2">LIST OF PRODUCTS</h3>
+            <table class="table table-dark table-striped table-hover mt-4">
+                <thead>
+                    <tr class="text-center">
+                    <th>NUMBER OF PRODUCT</th>
+                    <th>PRODUCT NAME</th>
+                    <th>PRICE</th>
+                    <th>CATEGORY</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center" ng-repeat="product in products">
+                            <td>{{$index+1}}</td>
+                            <td>{{product.product_name}}</td>
+                            <td>{{product.price}} denari</td>
+                            <td>{{product.title}}</td>
+                            <td title="edit"><i class="fa fa-edit"></i></td>
+                            <td title="delete"><button type="button" ng-click="position($index)" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-trash" style="color:red"></i></button></td>
+                        </tbody>
+            </table>        
+        </div>
+    </div>
+    <!-- /class row -->
+</div>
+<!-- /Container -->
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            Delete? {{products[getPosition].product_name}}
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger"  ng-click="deleteRow('products', products[getPosition].s_id)">Delete</button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+</div>

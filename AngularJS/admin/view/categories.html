@@ -1,0 +1,66 @@
+<h3 class="text-light mt-3 mb-5 mx-3">CATEGORIES</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <h3 class="text-light text-center mb-2">NEW CATEGORY</h3>
+            <form name="myForm">
+                <div class="mb-3 mt-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <span class="text-danger" ng-show="myForm.title.$dirty && myForm.title.$invalid">Enter category:</span>
+                    <input type="text" class="form-control"  placeholder="Enter category title" name="title" id="title" ng-model="title">
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="function_categories(title)">Save</button>
+            </form>
+            <div class="alert alert-success mt-4" ng-show="alert_success">Successful!</div>
+            <div class="alert alert-danger mt-4" ng-show="alert_danger">Unsuccessful!</div>
+        </div>
+        <!-- /left content -->
+        <div class="col-sm-9">
+        <h3 class="text-light text-center mb-2">LIST OF CATEGORIES</h3>  
+        <table class="table table-dark table-striped table-hover mt-4" >
+            <thead>
+                <tr class="text-center">
+                    <th>CATEGORIES</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr class="text-center" ng-repeat="category in categories">
+                        <td>{{category.title}}</td>
+                        <td title="edit"><i class="fa fa-edit"></i></td>
+                        <td title="delete"><button type="button" ng-click="position($index)" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-trash" style="color:red"></i></button></td>
+                    </tr>
+                    </tbody>
+                </table>         
+        </div>
+    </div>
+    <!-- /class row -->
+    </div>
+    <!-- /Container -->
+    <!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            Delete? {{categories[getPosition].title}}
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" ng-click="deleteRow('categories',categories[getPosition].title)">Delete</button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+   

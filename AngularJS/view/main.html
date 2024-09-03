@@ -1,0 +1,305 @@
+<!-- Hero Start -->
+<div class="container-fluid bg-success py-5 mb-5 hero-header">
+  <div class="container py-5">
+      <div class="row justify-content-start">
+          <div class="col-lg-8 text-center text-lg-start">
+              <h1 class="display-1 text-uppercase text-dark mb-lg-4">Pet Shop</h1>
+              <h1 class="text-uppercase text-white mb-lg-4">Make Your Pets Happy</h1>
+              <p class="fs-4 text-white mb-lg-4">Visit our website and make your pet happy.</p>
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                  <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
+                  <button type="button" class="btn-play" data-bs-toggle="modal"
+                  data-src="https://www.youtube.com/embed/bpIJRpYWOpI?si=xa6QkZIx3fWtw1Vq"
+                  data-bs-target="#videoModal">
+              <span></span>
+          </button>          
+                  <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Play Video</h5>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Hero End --> 
+
+<!-- Video Modal Start -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- 16:9 aspect ratio -->
+              <div class="ratio ratio-16x9">
+                  <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                      allow="autoplay"></iframe>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Video Modal End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+  <div class="container">
+      <div class="row gx-5">
+          <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+              <div class="position-relative h-100">
+                  <img class="aboutUs w-100 h-100 rounded">
+              </div>
+          </div>
+          <div class="col-lg-7">
+              <div class="border-start border-5 border-success ps-5 mb-5">
+                  <h6 class="text-success text-uppercase">About Us</h6>
+                  <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
+              </div>
+              <h4 class="text-body mb-4">Your pet is in good hands with us.</h4>
+              <div class="bg-light p-4">
+                  <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item w-50 " role="presentation">
+                          <button class="nav-link text-uppercase w-100 active " id="pills-1-tab" data-bs-toggle="pill"
+                              data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
+                              aria-selected="true">Our Mission</button>
+                      </li>
+                      <li class="nav-item w-50" role="presentation">
+                          <button class="nav-link text-uppercase w-100 " id="pills-2-tab" data-bs-toggle="pill"
+                              data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
+                              aria-selected="false">Our Vission</button>
+                      </li>
+                  </ul>
+                  <div class="tab-content " id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                          <p class="mb-0">Our mission is not only to come and buy for your pet, here you can ask for advice from experts, you can ask for a free tester of the foods we offer, you can ask us for an explanation of each product.</p>
+                      </div>
+                      <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                          <p class="mb-0">Our vision is that you visit us again.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- About End -->
+
+
+<!-- Offer Start -->
+<div class="container-fluid bg-offer my-5 py-5">
+  <div class="container py-5">
+      <div class="row gx-5 justify-content-start">
+          <div class="col-lg-7">
+              <div class="border-start border-5 border-dark ps-5 mb-5">
+                  <h6 class="text-dark text-uppercase">Special Offer</h6>
+                  <h1 class="display-5 text-uppercase text-white mb-0">Save 50% on all items your first order</h1>
+              </div>
+              <p class="text-white mb-4">CHECKED, BEST WITH WARRANTY</p>
+              <a href="" class="btn btn-light py-md-3 px-md-5 me-3">Shop Now</a>
+              <a href="" class="btn btn-outline-light py-md-3 px-md-5">Read More</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Offer End -->
+
+
+<!-- Team Start --> 
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="border-start border-5 border-success ps-5 mb-5" style="max-width: 600px;">
+          <h6 class="text-success text-uppercase">Team Members</h6>
+          <h1 class="display-5 text-uppercase mb-0">Qualified Pets Care Professionals</h1>
+        </div>
+        <select class="btn btn-light py-md-3 px-md-5 me-3 mb-5" name="filterByCategory" id="filterByCategory" ng-model="filterByCategory">
+          <option value="">All</option>
+          <option ng-repeat="employee in employees" value="{{employee.city}}">{{employee.city}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;"  ng-repeat="employee in employees.slice(0, 2) | filter:{city:filterByCategory}">
+          <div class="team-item">
+            <div class="position-relative overflow-hidden">
+              <div class="team-overlay">
+                <div class="d-flex align-items-center justify-content-center mt-3 mb-1">
+                  <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-facebook"></i></a>
+                  <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light text-center p-4">
+              <h5 class="text-uppercase">{{employee.first_name}} {{employee.last_name}}</h5>
+              <p class="m-0">Veterinarian</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;"  ng-repeat="employee in employees.slice(2) | filter:{city:filterByCategory}">
+          <div class="team-item">
+            <div class="position-relative overflow-hidden">
+              <div class="team-overlay">
+                <div class="d-flex align-items-center justify-content-center mt-3 mb-1">
+                  <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-facebook"></i></a>
+                  <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light text-center p-4">
+              <h5 class="text-uppercase">{{employee.first_name}} {{employee.last_name}}</h5>
+              <p class="m-0">Veterinarian</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Team End -->
+
+<!-- Products Start -->
+<div class="container-fluid py-5" ng-app="myApp">
+  <div class="container">
+    <div class="border-start border-5 border-success ps-5 mb-5" style="max-width: 600px;">
+      <h6 class="text-success text-uppercase">Products</h6>
+      <h1 class="display-5 text-uppercase mb-0">Products For Your Best Friends</h1>
+    </div>
+    <select class="btn btn-light py-md-3 px-md-5 me-3 mb-5 text-center" name="filterByCategory" id="filterByCategory" ng-model="filterByCategory">
+      <option value="">All</option>
+      <option ng-repeat="category in categories" value="{{category.title}}">{{category.title}}</option>
+    </select>
+
+    <div class="row">
+      <div class="col-md-3" ng-repeat="chunk in (products | chunk: 4)">
+        <div class="owl-carousel product-carousel">
+          <div class="pb-5" ng-repeat="product in chunk | filter:{title:filterByCategory}">
+            <div class="product-item position-relative bg-light d-flex flex-column text-center">
+              <h6 class="text-uppercase">{{product.product_name}}</h6>
+              <h5 class="text-success mb-0">{{product.price}} den</h5>
+              <div class="btn-action d-flex justify-content-around">
+                <a class="btn btn-success py-2 px-3" href=""><i class="fa fa-credit-card"></i></a>
+                <a class="btn btn-success py-2 px-3" href=""><i class="fa fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Products End -->
+
+<!-- Pricing Plan Start -->
+<div class="container-fluid py-5">
+  <div class="container">
+      <div class="border-start border-5 border-success ps-5 mb-5" style="max-width: 1200px;">
+          <h6 class="text-success text-uppercase">Pricing Plan</h6>
+          <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Pet Services</h1>
+      </div>
+      <div class="row g-5">
+          <div class="col-lg-4">
+              <div class="bg-light text-center pt-5 mt-lg-5">
+                  <h2 class="text-uppercase">Basic</h2>
+                  <h6 class="text-body mb-5">The Best Choice</h6>
+                  <div class="text-center bg-success p-4 mb-2">
+                      <h1 class="display-4 text-white mb-0">
+                          <small class="align-top"
+                              style="font-size: 22px; line-height: 45px;">den</small>2000<small
+                              class="align-bottom" style="font-size: 16px; line-height: 40px;"></small>
+                      </h1>
+                  </div>
+                  <div class="text-center p-3">
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Dog Food 5kg</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Medicine</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Dog Leash</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Dog Toys</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <a href="" class="btn btn-success text-uppercase py-2 px-4 my-3">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="bg-light text-center pt-5">
+                  <h2 class="text-uppercase">Standard</h2>
+                  <h6 class="text-body mb-5">The Best Choice</h6>
+                  <div class="text-center bg-dark p-4 mb-2">
+                      <h1 class="display-4 text-white mb-0">
+                          <small class="align-top"
+                              style="font-size: 22px; line-height: 45px;">den</small>5000<small
+                              class="align-bottom" style="font-size: 16px; line-height: 40px;"></small>
+                      </h1>
+                  </div>
+                  <div class="text-center p-4">
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Dog Food 8kg</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Medicine</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Dog Clothes</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Therapy</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <a href="" class="btn btn-success text-uppercase py-2 px-4 my-3">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="bg-light text-center pt-5 mt-lg-5">
+                  <h2 class="text-uppercase">Extended</h2>
+                  <h6 class="text-body mb-5">The Best Choice</h6>
+                  <div class="text-center bg-success p-4 mb-2">
+                      <h1 class="display-4 text-white mb-0">
+                          <small class="align-top"
+                              style="font-size: 22px; line-height: 45px;">den</small>8000<small
+                              class="align-bottom" style="font-size: 16px; line-height: 40px;"></small>
+                      </h1>
+                  </div>
+                  <div class="text-center p-4">
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Vitamin Dog Food</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Dog Food 10kg</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Clothes and Toys</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mb-1">
+                          <span>Therapy</span>
+                          <i class="fa fa-check text-success"></i>
+                      </div>
+                      <a href="" class="btn btn-success text-uppercase py-2 px-4 my-3">Order Now</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Pricing Plan End -->

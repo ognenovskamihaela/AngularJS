@@ -1,0 +1,157 @@
+<!-- Topbar Start -->
+<div class="container-fluid border-bottom d-none d-lg-block">
+    <div class="row gx-0">
+        <div class="col-lg-4 text-center py-2">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-map-marker fs-1 text-success me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase mb-1">Our Office</h6>
+                    <span>Boshko Najdovski 44, Bitola 7000</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center border-start border-end py-2">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-envelope-open fs-1 text-success me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase mb-1">Email Us</h6>
+                    <span>petshop@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center py-2">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-phone fs-1 text-success me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase mb-1">Call Us</h6>
+                    <span>070 237 222</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="aboutUs w-100 h-100 rounded">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="border-start border-5 border-success ps-5 mb-5">
+                    <h6 class="text-success text-uppercase">About Us</h6>
+                    <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
+                </div>
+                <h4 class="text-body mb-4">Your pet is in good hands with us.</h4>
+                <div class="bg-light p-4">
+                    <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item w-50 " role="presentation">
+                            <button class="nav-link text-uppercase w-100 active " id="pills-1-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
+                                aria-selected="true">Our Mission</button>
+                        </li>
+                        <li class="nav-item w-50" role="presentation">
+                            <button class="nav-link text-uppercase w-100 " id="pills-2-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
+                                aria-selected="false">Our Vission</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content " id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                            <p class="mb-0">Our mission is not only to come and buy for your pet, here you can ask for advice from experts, you can ask for a free tester of the foods we offer, you can ask us for an explanation of each product.</p>
+                        </div>
+                        <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                            <p class="mb-0">Our vision is that you visit us again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<!-- About End -->
+
+
+<!-- Offer Start -->
+<div class="container-fluid bg-offer my-5 py-5">
+    <div class="container py-5">
+        <div class="row gx-5 justify-content-start">
+            <div class="col-lg-7">
+                <div class="border-start border-5 border-dark ps-5 mb-5">
+                    <h6 class="text-dark text-uppercase">Special Offer</h6>
+                    <h1 class="display-5 text-uppercase text-white mb-0">Save 50% on all items your first order</h1>
+                </div>
+                <p class="text-white mb-4">CHECKED, BEST WITH WARRANTY</p>
+                <a href="" class="btn btn-light py-md-3 px-md-5 me-3">Shop Now</a>
+                <a href="" class="btn btn-outline-light py-md-3 px-md-5">Read More</a>
+            </div>
+        </div>
+    </div>
+  </div>
+<!-- Offer End -->
+
+
+<!-- Team Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="border-start border-5 border-success ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-success text-uppercase">Team Members</h6>
+            <h1 class="display-5 text-uppercase mb-0">Qualified Pets Care Professionals</h1>
+          </div>
+          <select class="btn btn-light py-md-3 px-md-5 me-3 mb-5" name="filterByCategory" id="filterByCategory" ng-model="filterByCategory">
+            <option value="">All</option>
+            <option ng-repeat="employee in employees" value="{{employee.city}}">{{employee.city}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;"  ng-repeat="employee in employees.slice(0, 2) | filter:{city:filterByCategory}">
+            <div class="team-item">
+              <div class="position-relative overflow-hidden">
+                <div class="team-overlay">
+                  <div class="d-flex align-items-center justify-content-center mt-3 mb-1">
+                    <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-light text-center p-4">
+                <h5 class="text-uppercase">{{employee.first_name}} {{employee.last_name}}</h5>
+                <p class="m-0">Veterinarian</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;"  ng-repeat="employee in employees.slice(2) | filter:{city:filterByCategory}">
+            <div class="team-item">
+              <div class="position-relative overflow-hidden">
+                <div class="team-overlay">
+                  <div class="d-flex align-items-center justify-content-center mt-3 mb-1">
+                    <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-light btn-square mx-1" href="#"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-light text-center p-4">
+                <h5 class="text-uppercase">{{employee.first_name}} {{employee.last_name}}</h5>
+                <p class="m-0">Veterinarian</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Team End -->
+
